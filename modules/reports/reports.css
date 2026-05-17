@@ -1,0 +1,276 @@
+/* =========================================
+   SHREEHUB BUSINESS SUITE
+   modules/reports/reports.css
+========================================= */
+
+/* PAGE */
+.reports-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* KPI GRID */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: var(--transition-normal);
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.kpi-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.kpi-content span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.kpi-content strong {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* GRID */
+.reports-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* CHARTS */
+.chart-card {
+  min-height: 420px;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  max-height: 320px !important;
+}
+
+/* INSIGHTS */
+.insight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.insight-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+}
+
+.insight-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.insight-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insight-meta strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.insight-meta span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.insight-value {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* TABLE */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.reports-table thead {
+  background: #f8fafc;
+}
+
+.reports-table th {
+  padding: 14px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.reports-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border);
+}
+
+.reports-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* STATUS */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: var(--radius-round);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.status-draft {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.status-exported {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.status-printed {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* EMPTY */
+#reportsEmptyState {
+  padding: 70px 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .reports-page {
+    padding: 20px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .kpi-content strong {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-card {
+    min-height: 340px;
+  }
+
+  .chart-card canvas {
+    max-height: 260px !important;
+  }
+
+  .insight-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .reports-page {
+    padding: 14px;
+  }
+
+  .kpi-card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .kpi-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .kpi-content strong {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShreeHub Business Suite | Products</title>
+
+  <meta
+    name="description"
+    content="Manage products and services for billing"
+  />
+
+  <!-- PWA -->
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="assets/logo/favicon.ico" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- SHARED CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/topbar.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- MODULE CSS -->
+  <link rel="stylesheet" href="modules/products/products.css" />
+</head>
+
+<body>
+
+  <div id="mobileOverlay" class="mobile-overlay"></div>
+
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <div id="sidebarMount"></div>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <div class="topbar-left">
+          <button id="openSidebar" class="icon-btn mobile-only">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="page-heading">
+            <h2>Products & Services</h2>
+            <p>Create reusable products for billing automation</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="productSearch"
+              placeholder="Search products..."
+            />
+          </div>
+
+          <button id="addProductBtn" class="primary-btn">
+            <i class="fa-solid fa-plus"></i>
+            Add Product
+          </button>
+
+        </div>
+
+      </header>
+
+      <!-- PAGE -->
+      <section class="products-page">
+
+        <div class="dashboard-card">
+
+          <div class="card-header">
+            <h3>Products Catalog</h3>
+
+            <div class="toolbar-right">
+              <button id="exportProductsBtn" class="secondary-btn">
+                <i class="fa-solid fa-download"></i>
+                Export
+              </button>
+
+              <label class="secondary-btn file-label">
+                <i class="fa-solid fa-upload"></i>
+                Import
+                <input type="file" id="importProductsInput" hidden />
+              </label>
+            </div>
+          </div>
+
+          <!-- EMPTY -->
+          <div id="productsEmptyState" class="empty-state">
+            <i class="fa-solid fa-box-open"></i>
+            <h4>No Products Yet</h4>
+            <p>Add products or services for quick billing.</p>
+
+            <button id="emptyAddProductBtn" class="primary-btn">
+              Add First Product
+            </button>
+          </div>
+
+          <!-- GRID -->
+          <div id="productsGrid" class="products-grid hidden"></div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="productModal" class="modal hidden">
+
+    <div class="modal-content large-modal">
+
+      <div class="modal-header">
+        <h2 id="productModalTitle">Add Product</h2>
+
+        <button class="icon-btn close-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="setup-grid">
+
+          <div class="form-group">
+            <label>Product / Service Name *</label>
+            <input type="text" id="prodName" />
+          </div>
+
+          <div class="form-group">
+            <label>SKU / Item Code</label>
+            <input type="text" id="prodSKU" />
+          </div>
+
+          <div class="form-group">
+            <label>HSN / SAC Code</label>
+            <input type="text" id="prodHSN" />
+          </div>
+
+          <div class="form-group">
+            <label>Unit</label>
+            <select id="prodUnit">
+              <option value="pcs">pcs</option>
+              <option value="kg">kg</option>
+              <option value="hrs">hrs</option>
+              <option value="box">box</option>
+              <option value="service">service</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Price *</label>
+            <input type="number" id="prodPrice" />
+          </div>
+
+          <div class="form-group">
+            <label>GST %</label>
+            <input type="number" id="prodGST" value="18" />
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+            <input type="text" id="prodCategory" />
+          </div>
+
+          <div class="form-group full-width">
+            <label>Description</label>
+            <textarea id="prodDescription"></textarea>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="secondary-btn close-modal">Cancel</button>
+        <button id="saveProductBtn" class="primary-btn">
+          Save Product
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="modules/products/products.js"></script>
+  <script src="js/sidebar-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* =========================
+   SHREEHUB BUSINESS SUITE
+   LAYOUT
+========================= */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-page {
+  padding: 28px;
+}
+
+/* OVERLAY */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-overlay);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-normal);
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* DASHBOARD */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.dashboard-left,
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

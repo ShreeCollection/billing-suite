@@ -1,0 +1,75 @@
+/* =========================
+   SHREEHUB BUSINESS SUITE
+   VARIABLES
+========================= */
+
+:root {
+  /* BRAND */
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --primary-light: #ccfbf1;
+
+  --secondary: #2563eb;
+  --accent: #f59e0b;
+
+  /* STATUS */
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #f59e0b;
+  --info: #0284c7;
+
+  /* BACKGROUNDS */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-sidebar: #0f172a;
+  --bg-sidebar-hover: rgba(255, 255, 255, 0.08);
+  --bg-overlay: rgba(15, 23, 42, 0.55);
+
+  /* TEXT */
+  --text-main: #111827;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+
+  /* BORDER */
+  --border: #e5e7eb;
+  --border-soft: rgba(255, 255, 255, 0.08);
+
+  /* SHADOW */
+  --shadow-soft: 0 12px 35px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 18px 45px rgba(15, 23, 42, 0.10);
+  --shadow-strong: 0 25px 60px rgba(15, 23, 42, 0.14);
+
+  /* RADIUS */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-round: 999px;
+
+  /* SIDEBAR */
+  --sidebar-width: 290px;
+
+  /* TOPBAR */
+  --topbar-height: 84px;
+
+  /* TRANSITIONS */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.45s ease;
+
+  /* Z INDEX */
+  --z-sidebar: 1000;
+  --z-overlay: 1100;
+  --z-topbar: 900;
+  --z-modal: 2000;
+}
+
+/* DARK FUTURE READY */
+[data-theme="dark"] {
+  --bg-main: #0b1120;
+  --bg-card: #111827;
+  --text-main: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border: rgba(255, 255, 255, 0.08);
+}

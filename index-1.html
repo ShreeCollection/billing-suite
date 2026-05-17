@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ShreeHub Business Suite | Dashboard</title>
+
+  <meta
+    name="description"
+    content="ShreeHub Business Suite - Professional business tools platform for billing, customers, products, reports and more."
+  />
+
+  <meta
+    name="keywords"
+    content="ShreeHub Business Suite, Billing Software, GST Invoice Generator, Business Dashboard"
+  />
+
+  <!-- PWA -->
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="assets/logo/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/topbar.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body
+  data-page-title="Dashboard"
+  data-page-subtitle="Welcome to ShreeHub Business Suite"
+>
+
+  <!-- MOBILE OVERLAY -->
+  <div id="mobileOverlay" class="mobile-overlay"></div>
+
+  <!-- APP -->
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <div id="sidebarMount"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+      <div id="topbarMount"></div>
+
+      <!-- DASHBOARD CONTENT -->
+      <section class="dashboard-page">
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-actions">
+
+          <a href="billing.html" class="action-card">
+            <div class="action-icon green">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <h3>Create Invoice</h3>
+            <p>Generate GST invoices instantly</p>
+          </a>
+
+          <a href="billing.html" class="action-card">
+            <div class="action-icon blue">
+              <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <h3>Create Quotation</h3>
+            <p>Professional quotation documents</p>
+          </a>
+
+          <a href="billing.html" class="action-card">
+            <div class="action-icon orange">
+              <i class="fa-solid fa-receipt"></i>
+            </div>
+            <h3>Create Receipt</h3>
+            <p>Generate payment receipts</p>
+          </a>
+
+          <a href="products.html" class="action-card">
+            <div class="action-icon purple">
+              <i class="fa-solid fa-box"></i>
+            </div>
+            <h3>Manage Products</h3>
+            <p>Save products for quick billing</p>
+          </a>
+
+          <a href="documents.html" class="action-card">
+            <div class="action-icon teal">
+              <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <h3>Documents</h3>
+            <p>Manage saved invoices & quotations</p>
+          </a>
+
+        </section>
+
+        <!-- METRICS -->
+        <section class="metrics-grid">
+
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <div>
+              <h3>0</h3>
+              <p>Total Invoices</p>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+              <h3>0</h3>
+              <p>Total Customers</p>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <div>
+              <h3>0</h3>
+              <p>Total Products</p>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+            <div>
+              <h3>₹0</h3>
+              <p>Total Revenue</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- CONTENT GRID -->
+        <section class="dashboard-grid">
+
+          <!-- LEFT -->
+          <div class="dashboard-left">
+
+            <!-- RECENT ACTIVITY -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3>Recent Activity</h3>
+                <button class="text-btn">View All</button>
+              </div>
+
+              <div class="empty-state">
+                <i class="fa-regular fa-folder-open"></i>
+                <h4>No recent documents</h4>
+                <p>Create your first invoice or quotation.</p>
+                <a href="billing.html" class="primary-btn">Start Billing</a>
+              </div>
+            </div>
+
+            <!-- UPCOMING MODULES -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3>Upcoming Modules</h3>
+              </div>
+
+              <div class="module-grid">
+                <div class="module-card locked">
+                  <i class="fa-solid fa-warehouse"></i>
+                  <span>Inventory</span>
+                </div>
+
+                <div class="module-card locked">
+                  <i class="fa-solid fa-user-group"></i>
+                  <span>CRM</span>
+                </div>
+
+                <div class="module-card locked">
+                  <i class="fa-solid fa-money-check-dollar"></i>
+                  <span>Payroll</span>
+                </div>
+
+                <div class="module-card locked">
+                  <i class="fa-solid fa-chart-simple"></i>
+                  <span>Analytics</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT -->
+          <div class="dashboard-right">
+
+            <!-- BUSINESS PROFILE -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3>Business Profile</h3>
+                <button id="setupBusinessBtn" class="text-btn">
+                  Configure
+                </button>
+              </div>
+
+              <div class="business-summary">
+                <div class="business-logo">
+                  <img src="assets/logo/logo.png" alt="Business Logo" />
+                </div>
+
+                <div class="business-details">
+                  <h4>Business Not Configured</h4>
+                  <p>Add your GST/business details to start billing.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- TIPS -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3>Quick Tips</h3>
+              </div>
+
+              <ul class="tips-list">
+                <li>Create GST invoices instantly.</li>
+                <li>Save products for faster billing.</li>
+                <li>Manage customer records locally.</li>
+                <li>Export PDFs professionally.</li>
+                <li>Backup your business data anytime.</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- FIRST TIME SETUP MODAL -->
+  <div id="setupModal" class="modal hidden">
+
+    <div class="modal-content large-modal">
+
+      <div class="modal-header">
+        <h2>Business Setup</h2>
+        <button class="icon-btn close-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="setup-grid">
+
+          <div class="form-group">
+            <label>Business Name</label>
+            <input type="text" id="businessName" />
+          </div>
+
+          <div class="form-group">
+            <label>GSTIN</label>
+            <input type="text" id="businessGST" />
+          </div>
+
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" id="businessPhone" />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="businessEmail" />
+          </div>
+
+          <div class="form-group full-width">
+            <label>Address</label>
+            <textarea id="businessAddress"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Logo Upload</label>
+            <input type="file" id="businessLogo" />
+          </div>
+
+          <div class="form-group">
+            <label>Signature Upload</label>
+            <input type="file" id="businessSignature" />
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="secondary-btn">Cancel</button>
+        <button class="primary-btn">Save Business Profile</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/sidebar-loader.js"></script>
+  <script src="js/topbar-loader.js"></script>
+</body>
+</html>

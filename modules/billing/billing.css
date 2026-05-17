@@ -1,0 +1,309 @@
+/* =========================================
+   SHREEHUB BUSINESS SUITE
+   modules/billing/billing.css
+========================================= */
+
+/* PAGE */
+.billing-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* TOOLBAR */
+.billing-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+}
+
+.toolbar-left {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 220px));
+  gap: 18px;
+  align-items: end;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* WORKSPACE */
+.billing-workspace {
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) minmax(560px, 780px);
+  gap: 24px;
+  align-items: start;
+}
+
+/* EDITOR */
+.billing-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* PREVIEW */
+.billing-preview {
+  position: sticky;
+  top: 100px;
+}
+
+.preview-shell {
+  padding: 18px;
+  overflow: hidden;
+}
+
+/* ITEMS */
+/* =========================
+   BILLING ITEM CARD LAYOUT
+========================= */
+
+#itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.item-row {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.item-row input,
+.item-row select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item-row .item-desc {
+  grid-column: 1 / -1;
+}
+
+.item-row .remove-item-btn {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.item-row .remove-item-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .item-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* mobile */
+@media (max-width: 992px) {
+  .item-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .item-row .icon-btn,
+  .item-row .remove-item-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .item-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* REMOVE BUTTON */
+.remove-item-btn {
+  width: 50px;
+  height: 50px;
+  color: var(--danger);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  background: rgba(220, 38, 38, 0.04);
+  box-shadow: none;
+}
+
+.remove-item-btn:hover {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+/* BILLING SPECIFIC FORM */
+.billing-toolbar .form-group label,
+.billing-editor .form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.billing-toolbar select,
+.billing-toolbar input,
+.billing-editor select,
+.billing-editor input,
+.billing-editor textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--text-main);
+  transition: var(--transition-fast);
+}
+
+.billing-toolbar select:focus,
+.billing-toolbar input:focus,
+.billing-editor select:focus,
+.billing-editor input:focus,
+.billing-editor textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+}
+
+.billing-editor textarea {
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+/* PREVIEW CONTAINER */
+#invoicePreviewContainer {
+  width: 100%;
+  background: #e2e8f0;
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  overflow: auto;
+}
+
+/* TOPBAR BUTTON FIX */
+.topbar-right .primary-btn,
+.topbar-right .secondary-btn {
+  white-space: nowrap;
+}
+
+/* DOCUMENT SWITCH COLORS */
+body[data-doc="invoice"] .preview-shell {
+  border-top: 4px solid var(--primary);
+}
+
+body[data-doc="quotation"] .preview-shell {
+  border-top: 4px solid var(--secondary);
+}
+
+body[data-doc="receipt"] .preview-shell {
+  border-top: 4px solid var(--success);
+}
+
+/* TABLET */
+@media (max-width: 1400px) {
+  .billing-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .billing-preview {
+    position: static;
+  }
+
+  #invoicePreviewContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* MID */
+@media (max-width: 1200px) {
+  .toolbar-left {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .billing-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar-right {
+    justify-content: flex-end;
+  }
+
+  .item-row {
+    grid-template-columns:
+      1fr
+      120px
+      90px
+      120px
+      100px
+      54px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .billing-page {
+    padding: 20px;
+  }
+
+  .toolbar-left {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar-right {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .billing-preview {
+    order: -1;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .item-row {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-shell {
+    padding: 12px;
+  }
+
+  #invoicePreviewContainer {
+    padding: 12px;
+  }
+}
+
+/* SMALL */
+@media (max-width: 576px) {
+  .billing-page {
+    padding: 14px;
+  }
+
+  .toolbar-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar-right button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .billing-editor .dashboard-card,
+  .billing-toolbar {
+    padding: 18px;
+  }
+}
